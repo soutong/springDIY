@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<!-- UserJdbcDaoImpl userJdbcDao = new UserJdbcDaoImpl() -->
+	<bean id="userJdbcDao" class="cn.zzsxt.dao.impl.UserJdbcDaoImpl"></bean>
+	<!-- UserMybatisDaoImpl userMybatisDao = new UserMybatisDaoImpl() -->
+	<bean id="userMybatisDao" class="cn.zzsxt.dao.impl.UserMybatisDaoImpl"></bean>
+	<!-- UserServiceImpl userService = new UserServiceImpl() -->
+	<bean id="userService" class="cn.zzsxt.service.impl.UserServiceImpl">
+		<!-- userService.setUserDao(userMybatisDao) -->
+		<property name="userDao2" ref="userJdbcDao"></property>
+	</bean>
+</beans>
